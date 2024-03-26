@@ -5,20 +5,16 @@ import { useState } from 'react';
 
 export const Question = ({text}) => {
   const [answer, setAnswer] = useState("symbolQuestion");
-
-  const handleSelect = (iconType) => {
-    setAnswer(iconType);
-  }
-  
+   
     return (
     <div className="question">
       <QuestionBody  answer={answer} text={text}/>
       <div className="question__options">
-        <Option onSelected={handleSelect} type="smileyStrongYes" text="Souhlasím"/>
-        <Option onSelected={handleSelect} type="smileyYes" text="Spíše souhlasím"/>
-        <Option onSelected={handleSelect} type="smileyNeutral" text="Nevím"/>
-        <Option onSelected={handleSelect} type="smileyNo" text="Spíše nesouhlasím"/>
-        <Option onSelected={handleSelect} type="smileyStrongNo" text="Nesouhlasím"/>
+        <Option onSelected={setAnswer} type="smileyStrongYes" text="Souhlasím"/>
+        <Option onSelected={setAnswer} type="smileyYes" text="Spíše souhlasím"/>
+        <Option onSelected={setAnswer} type="smileyNeutral" text="Nevím"/>
+        <Option onSelected={setAnswer} type="smileyNo" text="Spíše nesouhlasím"/>
+        <Option onSelected={setAnswer} type="smileyStrongNo" text="Nesouhlasím"/>
       </div>
     </div>
   );
